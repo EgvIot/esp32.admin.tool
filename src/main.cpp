@@ -37,11 +37,11 @@ void setup() {
     // Configurar los Pines
     settingPines();
     // Inicio del SPIFFS                 
-    if (!SPIFFS.begin()){
-        log(F("Error: FallÃ³ la inicializaciÃ³n del SPIFFS"));
+    if (!SPIFFS.begin(true)){               //IMPORTANTE PONER EL true 
+        log(F("Error: Falló la inicializaciÓn del SPIFFS"));
         while (true);
     }
-    // Lee la ConfiguraciÃ³n WiFi
+    // Lee la Configuración WiFi
     settingsReadWiFi();
     // Configuracion WIFI
     WiFi.disconnect(true);
@@ -56,11 +56,12 @@ void setup() {
 // -------------------------------------------------------------------
 void loop() {
 
-    yield();
+    yield();                                //cuando el loop tarda mucho se recomienda poner yield
+                                            //para que el watch dog no se vuelva loco
     // -------------------------------------------------------------------
     // WIFI
     // -------------------------------------------------------------------
-    if (wifi_mode == WIFI_STA){
+    if (wifi_mode == WIFI_STA){             //if para el modo de parpadeo en STA o AP
         wifiLoop();
     }else if (wifi_mode == WIFI_AP){
         wifiAPLoop();

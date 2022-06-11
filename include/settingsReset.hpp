@@ -12,15 +12,15 @@ void settingResetWiFi(){
     bootCount = 0;
     /* ------------------- CLIENTE -------------------- */
     wifi_staticIP = false;
-    strlcpy(wifi_ssid, "casa ciruelo", sizeof(wifi_ssid));
-    strlcpy(wifi_passw, "casaplum265", sizeof(wifi_passw));
+    strlcpy(wifi_ssid, "Totalplay-6A9C", sizeof(wifi_ssid));
+    strlcpy(wifi_passw, "6A9CBB05hk6FQDb6", sizeof(wifi_passw));
     strlcpy(wifi_ip_static, "192.168.0.150", sizeof(wifi_ip_static));
     strlcpy(wifi_gateway, "192.168.0.1", sizeof(wifi_gateway));
     strlcpy(wifi_subnet, "255.255.255.0", sizeof(wifi_subnet));
     strlcpy(wifi_primaryDNS, "8.8.8.8", sizeof(wifi_primaryDNS));
     strlcpy(wifi_secondaryDNS, "8.8.4.4", sizeof(wifi_secondaryDNS));
     /* ------------------- AP ------------------------- */
-    ap_accessPoint = true;
+    ap_accessPoint = false;                                 // si es true se conecta en AP y false en ST
     strlcpy(ap_nameap, deviceID().c_str(), sizeof(ap_nameap));
     strlcpy(ap_passwordap, "adminesp32", sizeof(ap_passwordap));
     ap_canalap = 9;         

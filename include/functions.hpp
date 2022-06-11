@@ -69,6 +69,7 @@ String idUnique(){
 // ID del Dispositivo para La Base de Datos
 // -------------------------------------------------------------------
 String deviceID(){
+    // ESP32 + MAC + ALGO 
     return String(platform()) + hexStr(ESP.getEfuseMac()) + String(idUnique());
 }
 // -------------------------------------------------------------------
